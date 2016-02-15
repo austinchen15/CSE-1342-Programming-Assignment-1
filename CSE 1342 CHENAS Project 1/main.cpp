@@ -47,14 +47,15 @@ int main() {
         // Main menu choices
         else
         {
-            // Generate a random number
+            // 1. Generate a random number
             if (menuInput == 1)
             {
+                // Instructional prompt
                 cout << "Enter your random number lower bound (inclusive): " << endl;
                 cin >> randLow;
                 cout << "Enter your random number upper bound (inclusive): " << endl;
                 cin >> randHigh;
-                randNum = rand() % (randHigh) + (randLow);
+                randNum = rand() % (randHigh) + (randLow); // Using rand function to return random number
                 cout << "Your random number is: " << randNum << endl;
                 
                 // Ask if user wishes to return to main menu (with input error checking)
@@ -69,18 +70,20 @@ int main() {
                 }
             } // Generate a random number
             
-            // Print a rectangle
+            // 2. Print a rectangle
             else if (menuInput == 2)
             {
-                
+                // While loop to check whether user inputs numbers between 4 and 15 (inclusive)
                 while ( ((rectNum1 < 4) || (rectNum1 > 15)) || ((rectNum2 < 4) || (rectNum2 > 15)) )
                 {
+                    // Gather user input
                     cout << "Enter two different numbers between 4 and 15 (inclusive). " << endl;
                     cout << "Your first number (height): " << endl;
                     cin >> rectNum1;
                     cout << "Your second number (width): "  << endl;
                     cin >> rectNum2;
                     
+                    // If user inputs out of bound numbers, loop will repeat.
                     if ( (rectNum1 < 4) || (rectNum1 > 15) || (rectNum2 < 4) || (rectNum2 > 15) )
                     {
                         cout << "Error: Please enter two new numbers. " << endl;
@@ -88,12 +91,15 @@ int main() {
                 }
                 
                 cout << "With your height " << rectNum1 << " and width "  << rectNum2 << " , your rectangle is: " << endl;
-                
+                // Program will print "i to rectNum1" number of rows
                 for (int i = 0 ; i < rectNum1 ; i++)
                 {
+                    // Program will print "j to rectNum2" number of columns
                     for (int j = 0 ; j < rectNum2 ; j++)
                     {
+                        // No endl; so that asterisks can appear on the same line
                         cout << "*";
+                        // If j reaches the end of the specified column length, program will begin at the next line.
                         if (j == (rectNum2 - 1))
                             cout << endl;
                     }
@@ -114,14 +120,19 @@ int main() {
             // FizzBuzz
             else if (menuInput == 3)
             {
+                // For loop to print 100 integer values
                 for (int i = 1 ; i <= 100 ; i++)
                 {
+                    // FizzBuzz first checks for multiples of BOTH 4 and 7, as multiples of both 4 and 7 are rarer than each respective value individually.
                     if ( i % 4 == 0 && i % 7 == 0 )
                         cout << "FizzBuzz" << endl;
+                    // Then checks for multiples of 4
                     else if (i % 4 == 0)
                         cout << "Fizz" << endl;
+                    // Then checks for multiples of 7
                     else if (i % 7 == 0)
                         cout << "Buzz" << endl;
+                    // If no matches are found, prints the number
                     else
                         cout << i << ". " << endl;
 
