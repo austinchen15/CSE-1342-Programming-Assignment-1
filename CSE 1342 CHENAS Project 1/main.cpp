@@ -1,8 +1,11 @@
 //
 //  main.cpp
+//
 //  CSE 1342 CHENAS Project 1
 //
 //  Created by Austin Chen on 2/1/16.
+//
+//  This project contains three functions: randomint, rectangle drawing, and FizzBuzz.
 //
 
 #include <iostream>
