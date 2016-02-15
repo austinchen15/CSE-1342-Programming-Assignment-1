@@ -73,6 +73,10 @@ int main() {
             // 2. Print a rectangle
             else if (menuInput == 2)
             {
+                // Reset rectangle values
+                rectNum1 = 0;
+                rectNum2 = 1;
+                
                 // While loop to check whether user inputs numbers between 4 and 15 (inclusive)
                 while ( ((rectNum1 < 4) || (rectNum1 > 15)) || ((rectNum2 < 4) || (rectNum2 > 15)) )
                 {
