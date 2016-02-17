@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
 #include <stdio.h>
 
 using namespace std;
@@ -20,9 +21,6 @@ int main() {
     // Declare all variables used
     bool quit = false;
     int menuInput;
-    int randLow;
-    int randHigh;
-    int randNum;
     int rectNum1 = 0;
     int rectNum2 = 1;
     
@@ -53,12 +51,21 @@ int main() {
             // 1. Generate a random number
             if (menuInput == 1)
             {
+                // Declare random number integers
+                int randLow;
+                int randHigh;
+                int randNum;
+                
                 // Instructional prompt
                 cout << "Enter your random number lower bound (inclusive): " << endl;
                 cin >> randLow;
                 cout << "Enter your random number upper bound (inclusive): " << endl;
                 cin >> randHigh;
-                randNum = rand() % (randHigh) + (randLow); // Using rand function to return random number
+                
+                // Create new seed
+                srand(time(NULL));
+                
+                randNum = rand() % (randHigh-randLow) + randLow; // Using rand function to return random number
                 cout << "Your random number is: " << randNum << endl;
                 
                 // Ask if user wishes to return to main menu (with input error checking)
